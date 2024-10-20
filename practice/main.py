@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
-from database import session_local, engine
-import models, schemas, calculate_crud
+from practice.dependencies.database import session_local, engine
+import practice.models.models as models, practice.schemas.schemas as schemas, practice.service.calculate_crud as calculate_crud
 from sqlalchemy.orm import Session
 
 app = FastAPI()

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-import schemas, models, math
+import practice.schemas.schemas as schemas, practice.models.models as models, math
 from fastapi import HTTPException
 
 def create_calculation(db : Session, calculation = schemas.CalculationCreate):

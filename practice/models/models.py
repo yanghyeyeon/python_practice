@@ -1,4 +1,4 @@
-from database import Base
+from practice.dependencies.database import Base
 from sqlalchemy import Column, Integer, String, Text, Float 
 
 # String => 고정된길이 (길이제한)
