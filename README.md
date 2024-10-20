@@ -1,12 +1,20 @@
 # - 패키지 구조
 ```
 C:\USERS\YHY40\DESKTOP\HYEYEON\PYTHON_PRACTICE\PRACTICE
-|   calculate_crud.py
 |   calculation.sqlite3
-|   database.py
 |   main.py
-|   models.py
-|   schemas.py
+|
++---dependencies
+|       database.py
+|
++---models
+|       models.py
+|
++---schemas
+|       schemas.py
+|
++---service
+|       calculate_crud.py
 |
 \---__pycache__
         calculate_crud.cpython-312.pyc
