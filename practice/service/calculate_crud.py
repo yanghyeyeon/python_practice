@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-import practice.schemas.schemas as schemas, practice.models.models as models, math
+import schemas.schemas as schemas, models.models as models, math
 from fastapi import HTTPException
 
 def create_calculation(db : Session, calculation = schemas.CalculationCreate):
@@ -9,9 +9,11 @@ def create_calculation(db : Session, calculation = schemas.CalculationCreate):
     if calculation.operation not in valid_operations:
         raise HTTPException(status_code=400, detail="Invalid operation")
     
+    # 0으로 나눴을때
     if calculation.operation == "/" and calculation.num2 == 0:
         raise HTTPException(status_code=400, detail="Cannot divide by zero")
     
+    # 제곱근 계산할때 음수 불가능
     if calculation.operation == "sqrt" and calculation.num1 < 0:
         raise HTTPException(status_code=400, detail="Cannot take square root of negative number")
     
